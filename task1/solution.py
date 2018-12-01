@@ -10,21 +10,16 @@ def endless_frequencies(file_name='input.txt'):
                 yield int(line)
 
 
-sum = 0
+print(sum(frequencies()))
 
-for freq in frequencies():
-    sum += freq
-
-print(sum)
-
-sum = 0
+_sum = 0
 
 frequencies_dict = {}
 
 for freq in endless_frequencies():
-    sum += freq
-    frequencies_dict[sum] = frequencies_dict.get(sum, 0) + 1
-    if frequencies_dict[sum] == 2:
+    _sum += freq
+    frequencies_dict[_sum] = frequencies_dict.get(_sum, 0) + 1
+    if frequencies_dict[_sum] == 2:
         break
 
-print(sum)
+print(_sum)
