@@ -1,4 +1,5 @@
 import re
+import operator
 from collections import Counter
 pattern = re.compile('[[](.+)[]]\s(.+)')
 rows = []
@@ -42,8 +43,7 @@ top_guard_stats = guards_stats[top_guard]
 print(Counter(top_guard_stats).most_common()[0])
 print(guards_summed[top_guard])
 
-minutes_guards = [(minute, guard) for guard in guards_stats for minute in guards_stats[guard]]
-minutes_guards = sorted(minutes_guards, key=operator.itemgetter(0))
+minutes_guards = sorted([(minute, guard) for guard in guards_stats for minute in guards_stats[guard]], key=operator.itemgetter(0))
 
 print(Counter(minutes_guards).most_common()[0])
 
