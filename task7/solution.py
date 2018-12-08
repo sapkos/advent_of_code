@@ -100,20 +100,3 @@ while tasks:
 
 print(total_time)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
