@@ -5,9 +5,8 @@ with open('input.txt') as f:
     no_players, last_marble = tuple(map(int, re.findall('\d+', f.readline())))
 
 
-
 def play_game(no_players=no_players, last_marble=last_marble):
-    player_scores = defaultdict(int)
+    player_scores = defaultdict(lambda : 0)
     marbles = deque([0])
 
     for marble in range(1, last_marble + 1):
